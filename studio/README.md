@@ -1,17 +1,19 @@
-# Ave Studio · prova locale
+# Avely Harness
 
-Scegli una clip, il punto di partenza e una cartella di destinazione. Ave salva un reel verticale 540 × 960 a 24 fps e la sua copertina JPEG. Puoi aggiungere una scritta fissa e tenere fino a 60 secondi di video. Il ritaglio è centrato.
+Apri la chat di Avely sul computer. Scegli una cartella di progetto e chiedi ad Ave un testo per una campagna o un reel dalle clip locali. La chat, i progetti, le sessioni e il selettore del modello sono quelli di DeepSeek Harness. Il preset Avely usa la cartella della conversazione e salva ciascuna bozza con la copertina in una sottocartella dedicata.
 
-## Avvio della prova
+## Avvio rapido (macOS e Linux)
 
-Su un computer con Python 3 e Tk, installa FFmpeg con libx264, AAC e drawtext e il runtime precompilato:
+Installa il runtime precompilato, poi dalla radice del fork:
 
 ```sh
 python3 -m pip install deepseek-harness-runtime-bin==0.2.2rc2
-python3 studio/ave_studio.pyw
+./studio/avely
 ```
 
-La finestra usa il profilo dsh incluso nel fork. Per questa prova basta il filmato locale. Ogni esportazione ha una propria cartella. La chiusura della finestra durante l'esportazione interrompe il lavoro.
+Si apre l'interfaccia Web locale. Collega il provider dalle impostazioni del modello per inviare messaggi. Per esportare video occorre FFmpeg sul PATH con libx264, AAC e drawtext. Un esempio di richiesta è «Quali clip ci sono nel progetto? Prepara un reel di 12 secondi dalla prima e aggiungi la scritta Arriva venerdì». Il video viene elaborato localmente. Il modello riceve i nomi che Ave legge e i percorsi dei risultati.
+
+Il launcher usa `~/.avely-studio` per sessioni e preferenze. Nelle build dal sorgente del fork, la composizione condivisa da `dsh web` ed Electron include già il preset e il marchio Avely. Per il runtime precompilato il launcher applica lo stesso file di configurazione all'avvio.
 
 ## Collegamento a una chat di prova
 

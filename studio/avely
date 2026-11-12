@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+repo=$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)
+export DSH_HOME="${DSH_HOME:-$HOME/.avely-studio}"
+exec python3 -c 'from deepseek_harness_runtime import main; main()' web --patch "$repo/packages/bundle/web-app/avely/cordis.patch.yml" "$@"

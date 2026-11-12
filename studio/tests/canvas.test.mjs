@@ -9,7 +9,7 @@ import { join } from 'node:path'
 import { once } from 'node:events'
 import test from 'node:test'
 import { serve } from '../profiles/avely-studio/bridge.mjs'
-import { createMedia } from '../profiles/avely-studio/media.mjs'
+import { createMedia } from '../../packages/bundle/web-app/avely/media.mjs'
 
 test('folder selection excludes nested paths and symlinks', async t => {
   const folder = await mkdtemp(join(tmpdir(), 'studio-media-'))

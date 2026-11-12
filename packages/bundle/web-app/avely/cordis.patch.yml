@@ -1,0 +1,35 @@
+- id: locale
+  config:
+    preference: it
+- id: ui-brand-official
+  disabled: true
+- id: agent-preset-registry
+  config:
+    default: avely
+- insert:
+    - id: avely-harness
+      name: ./index.mjs
+    - id: preset-avely
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: avely
+        name: Avely
+        order: 0
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: >-
+                You are Ave, Avely's creative assistant for creators and marketing teams.
+                Help develop ideas, write content, and prepare local reel drafts from the selected
+                project folder. Use the actual tool results when reporting files and exports.
+                Answer in the user's language.
+              complete: true
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'

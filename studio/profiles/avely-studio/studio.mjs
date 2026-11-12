@@ -1,4 +1,4 @@
-import { createMedia } from './media.mjs'
+import { createMedia } from '../../../packages/bundle/web-app/avely/media.mjs'
 import { serve } from './bridge.mjs'
 
 export const name = 'avely-studio'
@@ -9,14 +9,6 @@ export function apply(ctx) {
   if (!env.AVE_INPUT || !env.AVE_OUTPUT) throw new Error('Select the source and export folders')
   const controller = new AbortController()
   const exit = ctx.get('appExit')
-  if (env.AVE_LOCAL_SOURCE && env.AVE_WINDOW === '1') {
-    const onClose = () => { controller.abort(); exit(0) }
-    ctx.effect(() => {
-      process.stdin.once('end', onClose)
-      process.stdin.resume()
-      return () => { process.stdin.off('end', onClose); process.stdin.pause() }
-    })
-  }
   async function run() {
     const execute = await createMedia(env.AVE_INPUT, env.AVE_OUTPUT)
     if (env.AVE_LOCAL_SOURCE) {

@@ -10,7 +10,7 @@ const cueSchema = {
   properties: { start: { type: 'number', minimum: 0 }, end: { type: 'number', maximum: 60 },
     text: { type: 'string', minLength: 1, maxLength: 160 } },
 }
-const renderSchema = {
+export const renderSchema = {
   type: 'object', additionalProperties: false, required: ['source'],
   properties: {
     source: { type: 'string', description: 'A filename returned by canvas.read' },

@@ -1,6 +1,6 @@
 # Ave Studio
 
-Prototipo Avely per creator e aziende. Scegli una clip sul computer per ottenere un reel verticale con copertina. [Apri la guida alla prova locale](studio/README.md).
+Fork di DeepSeek Harness per creator e aziende. Apri la chat Avely, scegli un progetto e prepara testi e reel dalle clip locali. [Apri la guida alla prova locale](studio/README.md).
 
 # DeepSeek Harness
 
