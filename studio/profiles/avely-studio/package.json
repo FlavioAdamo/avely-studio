@@ -1,0 +1,6 @@
+{
+  "name": "avely-studio-profile",
+  "private": true,
+  "type": "module",
+  "dsh": { "profile": { "bundles": [] } }
+}

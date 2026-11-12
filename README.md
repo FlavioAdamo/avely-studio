@@ -1,3 +1,7 @@
+# Ave Studio
+
+Prototipo Avely per creator e aziende. Scegli una clip sul computer per ottenere un reel verticale con copertina. [Apri la guida alla prova locale](studio/README.md).
+
 # DeepSeek Harness
 
 English | [中文](README.zh.md)

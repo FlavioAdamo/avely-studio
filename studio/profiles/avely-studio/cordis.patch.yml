@@ -1,0 +1,3 @@
+- insert:
+    - id: avely-studio
+      name: ./studio.mjs
